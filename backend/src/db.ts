@@ -1,8 +1,13 @@
 import sqlite3 from "sqlite3";
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // database file in project root
-const dbPath = path.resolve(__dirname, "../data.db");
+const dbPath = process.env.DB_PATH
+  ? path.resolve(process.env.DB_PATH)
+  : path.resolve(__dirname, "../data.db");
 
 // connect to sqlite
 export const db = new sqlite3.Database(dbPath, (err) => {
