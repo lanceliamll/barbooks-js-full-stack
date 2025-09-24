@@ -1,16 +1,114 @@
 # BarBooks JS Full Stack Assessment
 
+A TypeScript-based full-stack application demonstrating order processing and data analysis capabilities.
+
+## Project Structure
+
+```
+backend/
+├── src/
+│   ├── orders/
+│   │   └── summarizeOrders.ts    # Order analysis logic
+│   ├── db.ts                     # Database connection
+│   └── seed.ts                   # Database seeding
+├── tests/
+│   └── summarizeOrders.test.ts   # Unit tests
+├── package.json
+└── tsconfig.json
+```
 
 ## Task 1: Logic & Unit Testing (15 min)
- - To verify this feature, follow these steps
- 1. Go to your terminal or hit cmd + `
- 2. cd backend
- 3. npm run jest
 
+This task implements order summarization logic with comprehensive unit testing.
+
+### Features
+- **Total Revenue Calculation**: Sum of all order values (qty × price)
+- **Median Order Price**: Statistical median of individual order values
+- **Top Product by Quantity**: Product with highest total quantity sold
+- **Unique Product Count**: Number of distinct products ordered
+
+### Verification Steps
+1. Open your terminal (`Ctrl + `` or `Cmd + ``)
+2. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+3. Run the test suite:
+   ```bash
+   npm run test
+   ```
+
+### Test Coverage
+- ✅ Typical case with mixed products
+- ✅ Even number of orders (median calculation)
+- ✅ Empty input handling
+- ✅ Edge cases and boundary conditions
 
 ## Task 2: Database Schema & Mock Data (5 min)
-- to verify this feature, follow these steps
- 1. Go to your terminal or hit cmd + `
- 2. cd backend
- 3. npx ts-node src/seed.ts => this will create a `data.db` on to your root file
- 4. If you have sqlite viewer, you can simply click on it to view, but if not, you can run `sqlite3 data.db "SELECT * FROM orders"`
+
+This task sets up a SQLite database with order data for testing and development.
+
+### Database Schema
+```sql
+CREATE TABLE orders (
+  id INTEGER PRIMARY KEY,
+  product TEXT NOT NULL,
+  qty INTEGER NOT NULL,
+  price REAL NOT NULL
+);
+```
+
+### Verification Steps
+1. Open your terminal (`Ctrl + `` or `Cmd + ``)
+2. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+3. Run the database seeding script:
+   ```bash
+   npx ts-node src/seed.ts
+   ```
+   > This creates a `data.db` file in the backend directory
+
+4. **View the data** (choose one option):
+   
+   **Option A: SQLite Viewer Extension**
+   - If you have a SQLite viewer extension installed, simply click on `data.db`
+   
+   **Option B: Command Line**
+   ```bash
+   sqlite3 data.db "SELECT * FROM orders"
+   ```
+
+### Sample Data
+The seeding script populates the database with realistic order data including:
+- Various product types
+- Different quantities and prices
+- Multiple orders per product
+- Edge cases for testing
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- TypeScript
+
+### Installation
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   cd backend
+   npm install
+   ```
+
+### Development
+- **Run tests**: `npm run test`
+- **Build project**: `npm run build`
+- **Seed database**: `npx ts-node src/seed.ts`
+
+## Technologies Used
+- **TypeScript**: Type-safe JavaScript development
+- **Jest**: Testing framework
+- **SQLite**: Lightweight database
+- **Node.js**: Runtime environment
