@@ -1,0 +1,16 @@
+# BarBooks JS Full Stack Assessment
+
+
+## Task 1: Logic & Unit Testing (15 min)
+ - To verify this feature, follow these steps
+ 1. Go to your terminal or hit cmd + `
+ 2. cd backend
+ 3. npm run jest
+
+
+## Task 2: Database Schema & Mock Data (5 min)
+- to verify this feature, follow these steps
+ 1. Go to your terminal or hit cmd + `
+ 2. cd backend
+ 3. npx ts-node src/seed.ts => this will create a `data.db` on to your root file
+ 4. If you have sqlite viewer, you can simply click on it to view, but if not, you can run `sqlite3 data.db "SELECT * FROM orders"`
