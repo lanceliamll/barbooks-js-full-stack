@@ -46,7 +46,7 @@ app.get('/api/orders', (req, res) => {
 
 	if (product) {
 		query += ' AND product LIKE ?';
-		params.push(product);
+		params.push(`%${product}%`);
 	}
 
 	if (limit) {
