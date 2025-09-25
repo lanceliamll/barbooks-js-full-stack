@@ -14,7 +14,7 @@ backend/
 │   └── seed.ts                   # Database seeding
 ├── tests/
 │   ├── summarizeOrders.test.ts   # Unit tests
-│   └── api.test.ts               # Integration tests
+│   └── orders.test.ts            # Integration tests
 ├── .env                          # Environment variables
 ├── package.json
 └── tsconfig.json
@@ -28,6 +28,7 @@ frontend/
 │   ├── components/
 │   │   ├── OrdersList.tsx        # Orders display component
 │   │   ├── OrdersSummary.tsx     # Summary display component
+│   │   ├── OrdersForm.tsx        # Add orders component
 │   └── App.tsx
 ├── package.json
 └── tsconfig.json
