@@ -21,7 +21,7 @@ describe("summarizeOrders", () => {
       { id: 1, product: "iPhone 16 Pro Max", qty: 1, price: 10 }, // 10
       { id: 2, product: "iMac", qty: 1, price: 20 }, // 20
       { id: 3, product: "iPhone 17", qty: 1, price: 30 }, // 30
-      { id: 4, product: "iPad", qty: 1, price: 40 }, // 40
+      { id: 4, product: "iPad", qty: 1, price: 40 }, // 40`
     ];
     const result = summarizeOrders(orders);
     expect(result.medianOrderPrice).toBe(25);
