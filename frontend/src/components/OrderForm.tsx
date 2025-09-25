@@ -31,7 +31,7 @@ export function OrderForm({ onSuccess }: Props) {
 
 	return (
 		<form onSubmit={handleSubmit} style={{ marginTop: "1rem" }}>
-			<h2>Add Order</h2>	
+			<h2>Add Product</h2>	
 			<div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "0.5rem" }}>
 				<label>Product</label>
 				<input
